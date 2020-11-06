@@ -81,7 +81,7 @@
                                 <i class="mdi mdi-settings text-danger"></i>
                             </div>
                         </div>
-                        <div class="preview-item-content" onclick="goPage('pages/login.php')">
+                        <div class="preview-item-content" onclick="goPage('login.php')">
                             <p class="preview-subject mb-1">Settings</p>
                             <p class="text-muted ellipsis mb-0"> Update dashboard </p>
                         </div>
