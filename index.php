@@ -26,6 +26,7 @@
 
 <body>
   <?php include 'pages/conn.php'; ?>
+  <?php include 'pages/check-login.php'; ?>
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
     <?php include 'pages/sidebar.php'; ?>
@@ -34,7 +35,15 @@
       <!-- partial:partials/_navbar.html -->
       <?php include 'pages/navbar.php'; ?>
       <!-- partial -->
-      <?php include 'pages/main-page.php'; ?>
+      <?php
+      if ($_GET['page'] == "admin") {
+        include 'pages/admin/admin.php';
+      } else {
+        include 'pages/main-page.php';
+      }
+
+
+      ?>
       <!-- content-wrapper ends -->
       <!-- partial:partials/_footer.html -->
       <footer class="footer">

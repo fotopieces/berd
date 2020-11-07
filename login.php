@@ -74,7 +74,6 @@
                     },
                     function(data, status) {
                         if ("Y" == data) {
-                            $.cookie('visited', $("#pass").val(), time() + (86400 * 30), "/");
                             window.location.href = "index.php";
                         } else {
                             $("#exampleModalLong").modal();
