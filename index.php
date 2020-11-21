@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
@@ -74,8 +86,23 @@
   <script src="assets/js/misc.js"></script>
   <script src="assets/js/settings.js"></script>
   <script src="assets/js/todolist.js"></script>
+
   <!-- endinject -->
   <!-- Custom js for this page -->
+
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="assets/vendors/select2/select2.min.js"></script>
+  <script src="assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <!-- End plugin js for this page -->
+
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src="assets/js/file-upload.js"></script>
+  <script src="assets/js/typeahead.js"></script>
+  <script src="assets/js/select2.js"></script>
+
+
   <script src="assets/js/dashboard.js"></script>
   <!-- End custom js for this page -->
   <?php include 'pages/end-conn.php'; ?>
@@ -83,6 +110,12 @@
     function goPage(page) {
       window.location.href = page;
     }
+    $(document).ready(function() {
+      $("#btAddNumber").click(function() {
+        var values = $('#selectSimType').val();
+        alert(values);
+      });
+    });
   </script>
 </body>
 
