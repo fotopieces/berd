@@ -2,10 +2,9 @@
 include '../conn.php';
 include '../../fn.php';
 $id = $_POST["id"];
-$cat = $_POST["cat"];
+$cat = $_POST["cats"];
 $numbershow = $_POST["number"];
 $number = $_POST["number"];
-$cat = $_POST["cat"];
 $network = $_POST["network"];
 $baseprice = $_POST["baseprice"];
 $priceinsim = $_POST["priceinsim"];
@@ -93,8 +92,36 @@ if (trim($id) == "") {
     if (checkLogin()) {
         $conn->query($sql);
     }
-    echo "<script>window.location = '../../index.php?page=admin&sub-page=add-number'</script>";
 } else {
+    $sql = "delete FROM numbersims where id = " . trim($id);
+    $conn->query($sql);
+    $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith)
+    VALUES (
+        '" . $number . "',
+        '" . $numbershow . "',
+        '" . $cat . "," . "',
+        '" . $network . "',
+        '" . $baseprice . "',
+        '" . $priceinsim . "',
+        CAST('" . $openday . "' AS DATE) ,
+        CAST('" . $closeday . "' AS DATE) ,
+    '',
+    'Y',
+    '" . $price . "',
+    '" . $remark . "',
+    '" . $sum . "',
+    '" . $n1 . "',
+    '" . $n2 . "',
+    '" . $n3 . "',
+    '" . $n4 . "',
+    '" . $n5 . "',
+    '" . $n6 . "',
+    '" . $n7 . "',	
+    '" . $startw . "'
+    )";
+    if (checkLogin()) {
+        $conn->query($sql);
+    }
 }
-
+echo "<script>window.location = '../../index.php?page=admin&sub-page=add-number'</script>";
 include '../end-conn.php';

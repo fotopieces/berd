@@ -9,6 +9,7 @@
                     <div class="card-body">
                         <form id="addNumber" method="post" action="pages/admin/save-number.php">
                             <input type="hidden" id="id" name="id">
+                            <input type="hidden" id="cats" name="cats">
                             <p class="card-description">
                                 <h4 class="card-title">เพิ่มเบอร์</h4>
                                 <font color="red">ใส่ * หน้าหลังหากต้องการสีแดง</font>&nbsp&nbsp&nbsp
@@ -32,7 +33,7 @@
 
                                         <label class="col-sm-3 col-form-label">เลือกหมวดซิม</label>
                                         <div class="col-sm-9">
-                                            <select id="cat" name="cat" class="js-example-basic-multiple" multiple="multiple" style="width:100%">
+                                            <select id="cat" name="cat" multiple="multiple" style="background-color: #2a3038;height: 200px; width:100%;color: white; ">
                                                 <?php
                                                 $result = $conn->query("SELECT * FROM catalogsims");
                                                 if ($result->num_rows > 0) {
@@ -51,7 +52,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">เลือกเครือข่าย</label>
                                         <div class="col-sm-9">
-                                            <select id="networks" name="network" class="js-example-basic-single" style="width:100%">
+                                            <select id="networks" name="network" style="background-color: #2a3038;width:100%;color: white; ">
                                                 <option value="0">กรุณาเลือก</option>
                                                 <?php
                                                 $result = $conn->query("SELECT * FROM networksims order by name asc");
@@ -123,7 +124,7 @@
                                 </div>
                             </div>
                             <button type="button" onclick="doSave()" id="btAddNumber" class="btn btn-primary mr-2">บันทึก</button>
-                            <button class="btn btn-dark">ยกเลิก</button>
+                            <button onclick="javascript:window.location.reload()" class="btn btn-dark">ยกเลิก</button>
                         </form>
                     </div>
                 </div>
@@ -165,7 +166,18 @@
                                                 <td style="text-align:center"> วันขาย</br>(<font color="red"> <?= todate($row["soldday"]) ?> </font>) </td>
                                                 <td align="center" style="width: 15%">
                                                     <!-- 						id,cat,networkid,numbershow,priceinsim,baseprice,price,openday,closeday -->
-                                                    <a title="แก้ไข"><img src="img/edit-icon.png" width="30px" height="30px" /></a>&nbsp;
+                                                    <a title="แก้ไข" href="javascript:doEdit(
+                                                        '<?= $row["id"] ?>',
+                                                        '<?= $row["catalogid"] ?>',
+                                                        '<?= $row["networkid"] ?>',
+                                                        '<?= $row["numbershow"] ?>',
+                                                        '<?= $row["priceinsim"] ?>',
+                                                        '<?= $row["baseprice"] ?>',
+                                                        '<?= $row["price"] ?>',
+                                                        '<?= todate($row["openday"]) ?>',
+                                                        '<?= todate($row["closeday"]) ?>',
+                                                        '<?= $row["remark"] ?>')">
+                                                        <img src="img/edit-icon.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="ขาย" href="javascript:doSold('<?= $row["id"] ?>')"><img src="img/s.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="กลับมาขายใหม่" href="javascript:doReSell('<?= $row["id"] ?>')"><img src="img/re.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="ลบ" href="javascript:dodelete('<?= $row["id"] ?>')"><img src="img/d.png" width="30px" height="30px" /></a>&nbsp;
@@ -186,6 +198,44 @@
 
 
     <script>
+        function getSelectValues(select) {
+            var result = [];
+            var options = select && select.options;
+            var opt;
+
+            for (var i = 0, iLen = options.length; i < iLen; i++) {
+                opt = options[i];
+
+                if (opt.selected) {
+                    result.push(opt.value || opt.text);
+                }
+            }
+            return result;
+        }
+
+        function doEdit(id, cat, networkid, numbershow, priceinsim, baseprice, price, openday, closeday, remark) {
+
+
+            var testArray = cat.split(',');
+            $('#cat').val(testArray);
+
+            document.getElementById("btAddNumber").innerHTML = "แก้ไข";
+
+            document.getElementById("id").value = id;
+            document.getElementById("networks").value = "" + networkid + "";
+
+
+
+            document.getElementById("number").value = numbershow;
+            document.getElementById("priceinsim").value = priceinsim;
+            document.getElementById("baseprice").value = baseprice;
+            document.getElementById("price").value = price;
+            document.getElementById("openday").value = openday;
+            document.getElementById("closeday").value = closeday;
+            document.getElementById("remark").value = remark;
+
+        }
+
         function dodelete(id) {
             if (confirm("ต้องการลบข้อมูลหรือไม่")) {
                 window.location = "pages/admin/delete-number.php?id=" + id;
@@ -206,6 +256,9 @@
 
         function doSave() {
             var data = "";
+
+            document.getElementById("cats").value = getSelectValues(document.getElementById("cat"));
+
             if (document.getElementById("number").value == "") {
                 alert("กรุณากรอกเบอร์โทร");
             } else if (document.getElementById("cat").value == "") {
