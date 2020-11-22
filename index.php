@@ -104,8 +104,14 @@
 
 
   <script src="assets/js/dashboard.js"></script>
+
+
   <!-- End custom js for this page -->
   <?php include 'pages/end-conn.php'; ?>
+
+
+
+
   <script>
     function goPage(page) {
       window.location.href = page;
@@ -115,6 +121,131 @@
         var values = $('#selectSimType').val();
         alert(values);
       });
+    });
+  </script>
+  <style type="text/css">
+    /* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */
+    .ui-datepicker {
+      width: 220px;
+      font-family: tahoma;
+      font-size: 11px;
+      text-align: center;
+    }
+  </style>
+  <?php
+  $jquery_ui_v = "1.8.5";
+  $theme = array(
+    "0" => "base",
+    "1" => "black-tie",
+    "2" => "blitzer",
+    "3" => "cupertino",
+    "4" => "dark-hive",
+    "5" => "dot-luv",
+    "6" => "eggplant",
+    "7" => "excite-bike",
+    "8" => "flick",
+    "9" => "hot-sneaks",
+    "10" => "humanity",
+    "11" => "le-frog",
+    "12" => "mint-choc",
+    "13" => "overcast",
+    "14" => "pepper-grinder",
+    "15" => "redmond",
+    "16" => "smoothness",
+    "17" => "south-street",
+    "18" => "start",
+    "19" => "sunny",
+    "20" => "swanky-purse",
+    "21" => "trontastic",
+    "22" => "ui-darkness",
+    "23" => "ui-lightness",
+    "24" => "vader"
+  );
+  $jquery_ui_theme = $theme[8];
+  ?>
+  <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/<?= $jquery_ui_v ?>/themes/<?= $jquery_ui_theme ?>/jquery-ui.css" />
+  <style type="text/css">
+    /* ปรับขนาดตัวอักษรของข้อความใน tabs  
+สามารถปรับเปลี่ยน รายละเอียดอื่นๆ เพิ่มเติมเกี่ยวกับ tabs 
+*/
+    .ui-tabs {
+      font-family: tahoma;
+      font-size: 11px;
+    }
+  </style>
+  <style type="text/css">
+    /* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */
+    .ui-datepicker {
+      width: 220px;
+      font-family: tahoma;
+      font-size: 11px;
+      text-align: center;
+    }
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+  <script src="js/jqueryui_datepicker_thai.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#dateInput").datepicker({
+        dateFormat: 'dd-mm-yy',
+        showOn: 'button',
+        numberOfMonths: 2,
+        //		buttonImage: 'http://jqueryui.com/demos/datepicker/images/calendar.gif',
+        buttonImageOnly: false,
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $("#dateInput2").datepicker({
+        dateFormat: 'dd-mm-yy',
+        showOn: 'button',
+        numberOfMonths: 2,
+        //		buttonImage: 'http://jqueryui.com/demos/datepicker/images/calendar.gif',
+        buttonImageOnly: false,
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $("#dateInput3").datepicker({
+        dateFormat: 'dd-mm-yy',
+        showOn: 'button',
+        //		buttonImage: 'http://jqueryui.com/demos/datepicker/images/calendar.gif',
+        buttonImageOnly: false,
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $("#openday").datepicker({
+        dateFormat: 'dd-mm-yy',
+        showOn: 'button',
+        //		buttonImage: 'http://jqueryui.com/demos/datepicker/images/calendar.gif',
+        buttonImageOnly: false,
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $("#closeday").datepicker({
+        dateFormat: 'dd-mm-yy',
+        showOn: 'button',
+        //		buttonImage: 'http://jqueryui.com/demos/datepicker/images/calendar.gif',
+        buttonImageOnly: false,
+        changeMonth: true,
+        changeYear: true
+      });
+
+
+
+      $("#date_inline").datepicker({
+        dateFormat: 'dd-mm-yy',
+        buttonImageOnly: false
+      });
+
+      $("#date_inline2").datepicker({
+        dateFormat: 'dd-mm-yy',
+        buttonImageOnly: false
+      });
+
     });
   </script>
 </body>
