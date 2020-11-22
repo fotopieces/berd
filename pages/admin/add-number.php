@@ -166,8 +166,8 @@
                                                 <td align="center" style="width: 15%">
                                                     <!-- 						id,cat,networkid,numbershow,priceinsim,baseprice,price,openday,closeday -->
                                                     <a title="แก้ไข"><img src="img/edit-icon.png" width="30px" height="30px" /></a>&nbsp;
-                                                    <a title="ขาย"><img src="img/s.png" width="30px" height="30px" /></a>&nbsp;
-                                                    <a title="กลับมาขายใหม่"><img src="img/re.png" width="30px" height="30px" /></a>&nbsp;
+                                                    <a title="ขาย" href="javascript:doSold('<?= $row["id"] ?>')"><img src="img/s.png" width="30px" height="30px" /></a>&nbsp;
+                                                    <a title="กลับมาขายใหม่" href="javascript:doReSell('<?= $row["id"] ?>')"><img src="img/re.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="ลบ" href="javascript:dodelete('<?= $row["id"] ?>')"><img src="img/d.png" width="30px" height="30px" /></a>&nbsp;
 
                                                 </td>
@@ -189,6 +189,18 @@
         function dodelete(id) {
             if (confirm("ต้องการลบข้อมูลหรือไม่")) {
                 window.location = "pages/admin/delete-number.php?id=" + id;
+            }
+        }
+
+        function doSold(id) {
+            if (confirm("ต้องการขายหมายเลขนี้หรือไม่")) {
+                window.location = "pages/admin/sold-number.php?id=" + id;
+            }
+        }
+
+        function doReSell(id) {
+            if (confirm("ต้องการนำกลับมาขายใหม่หรือไม่")) {
+                window.location = "pages/admin/resell-number.php?id=" + id;
             }
         }
 
