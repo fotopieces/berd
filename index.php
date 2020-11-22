@@ -38,6 +38,7 @@
 
 <body>
   <?php include 'pages/conn.php'; ?>
+  <?php include 'fn.php'; ?>
   <?php include 'pages/check-login.php'; ?>
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
@@ -117,12 +118,32 @@
       window.location.href = page;
     }
     $(document).ready(function() {
-      $("#btAddNumber").click(function() {
-        var values = $('#selectSimType').val();
-        alert(values);
+
+      $("#scNum").on('keyup', function(e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+          alert('Enter!');
+        }
       });
+
+      var scNumVal = $('#scNum').val();
+      if (scNumVal != undefined && scNumVal != "") {
+        $(window).scrollTop(600);
+      }
+
+      $('#addNumber').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+
+
     });
   </script>
+
+
   <style type="text/css">
     /* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */
     .ui-datepicker {
