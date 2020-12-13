@@ -51,7 +51,9 @@
       <?php
       if ($_GET['page'] == "admin") {
         include 'pages/admin/admin.php';
-      } else {
+      } else if ($_GET['page'] == "") {
+        include 'pages/main-page.php';
+      } else if ($_GET['cat'] != "") {
         include 'pages/main-page.php';
       }
 

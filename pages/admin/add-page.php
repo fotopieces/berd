@@ -4,7 +4,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card" id="showSc">
                     <div class="card-body">
-                        <h4 class="card-title">หมวดเบอร์โทร</h4>
+                        <h4 class="card-title">หมวดคำทำนายตามผลรวม</h4>
                         <form id="form" method="post" action="pages/admin/save-page.php">
                             <input type="hidden" id="id" name="id">
 

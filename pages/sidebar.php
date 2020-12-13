@@ -4,33 +4,35 @@
 		<li class="nav-item nav-category">
 			<span class="nav-link" style="font-size: 20px; color: white;"><b>หมวดเบอร์โทร</b></span>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="index.php">
+		<li class="nav-item menu-items"><a class="nav-link" href="?net=AIS">
 				<span class="menu-icon"> <img src="img/a.png" width="30px">
 				</span> <span class="menu-title">เบอร์ Ais</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items">
-			<a class="nav-link" href="pages/tables/basic-table.html">
+			<a class="nav-link" href="?net=True">
 				<span class="menu-icon"> <img src="img/t.png" width="30px"></span>
 				<span class="menu-title">เบอร์ True</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items">
-			<a class="nav-link" href="pages/tables/basic-table.html">
+			<a class="nav-link" href="?net=Dtac">
 				<span class="menu-icon"> <img src="img/dt.png" width="30px"></span>
 				<span class="menu-title">เบอร์ Dtac</span>
 			</a>
 		</li>
 		<?php
-		$sql = "SELECT * FROM group_number";
+		$sql = "SELECT * FROM catalogsims order by id asc";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
 		?>
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="pages/tables/basic-table.html">
-						<span class="menu-icon"> <img src="img/dt.png" width="30px"></span>
-						<span class="menu-title">เบอร์ Dtac</span>
+					<a class="nav-link" href="?cat=<?= $row["random"] ?>">
+						<span class="menu-icon">
+							<i class="mdi mdi-file-document-box"></i>
+						</span>
+						<span class="menu-title"><?= $row["name"] ?></span>
 					</a>
 				</li>
 		<?php

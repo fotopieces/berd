@@ -1,19 +1,22 @@
 <div class="main-panel">
     <div class="content-wrapper">
-        <div class="row">
-            <div class="col-md-2 col-xl-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title"></h4>
-                        <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
-                            <div class="item">
-                                <img src="img/1.jpg" alt="">
+        <?php
+        if ($_GET['cat'] == "" && $_GET['net'] == "") { ?>
+            <div class="row">
+                <div class="col-md-2 col-xl-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"></h4>
+                            <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+                                <div class="item">
+                                    <img src="img/1.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
         <div class="row">
             <div class="col-md-2 col-xl-4 grid-margin stretch-card">
                 <div class="card">
@@ -29,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-xl-8 grid-margin stretch-card">
+            <div class="col-md-2 col-xl-8 grid-margin stretch-card d-none d-lg-flex">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">ค้นหาเบอร์</h4>
@@ -112,10 +115,39 @@
                 </div>
             </div>
         </div>
+        <?php
+        $sql = "SELECT * FROM `catalogsims` WHERE random = " . $_GET['cat'];
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
+                <div class="row">
+                    <div class="col-12" style="text-align: center;font-size: 20px;">
+                        หมวดเบอร์ : <?= $row["name"] ?>
+                    </div>
+                </div>
+            <?php
+                break;
+            }
+        } else { ?>
+            <div class="row">
+                <div class="col-12" style="text-align: center;font-size: 20px;">
+                    หมวดเบอร์ : <?= $_GET['net'] ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
         <div class="row">
 
             <?php
-            $sql = "SELECT * FROM numbersims ORDER BY RAND() LIMIT 52 ";
+            if ($_GET['cat'] == "" && $_GET['net'] == "") {
+                $sql = "SELECT * FROM numbersims ORDER BY RAND() LIMIT 52 ";
+            } else if ($_GET['cat'] != "") {
+                $sql = "SELECT * FROM numbersims where catalogid like '%" . $_GET['cat'] . "%' ";
+            } else if ($_GET['net'] != "") {
+                $sql = "SELECT * FROM numbersims where networkid like '%" . $_GET['net'] . "%' ";
+            }
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
@@ -139,7 +171,7 @@
                                             <br>
                                         </div>
                                         <div class="align-items-center align-self-start" style="text-align: center;">
-                                            <p class="text-success  mb-0 font-weight-medium">ผลรวม <?= $row["sum"] ?> ราคา <?= $row["price"] ?> บาท </p>
+                                            <p class="text-success  mb-0 font-weight-medium">ผลรวม <?= $row["sum"] ?><?php if ($row["price"] != 0) { ?> ราคา <?= $row["price"] ?> บาท <?php } ?></p>
                                         </div>
                                     </div>
                                 </div>
