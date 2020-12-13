@@ -113,89 +113,42 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <img src="img/dt.png" width="60px">
-                            </div>
-                            <div class="col-12">
-                                <div class=" align-items-center align-self-start" style="text-align: center;">
-                                    <h3 class="mb-0">092-6164466</h3>
-                                    <br>
+
+            <?php
+            $sql = "SELECT * FROM numbersims ORDER BY RAND() LIMIT 52 ";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) { ?>
+                    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center;">
+                                        <?php
+                                        if ($row["networkid"] == "AIS") { ?>
+                                            <img src="img/a.png" width="60px">
+                                        <?php } else if ($row["networkid"] == "True") { ?>
+                                            <img src="img/t.png" width="60px">
+                                        <?php } else { ?>
+                                            <img src="img/dt.png" width="60px">
+                                        <?php } ?>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" align-items-center align-self-start" style="text-align: center;">
+                                            <h3 class="mb-0"><?= colornumber($row["numbershow"]) ?> </h3>
+                                            <br>
+                                        </div>
+                                        <div class="align-items-center align-self-start" style="text-align: center;">
+                                            <p class="text-success  mb-0 font-weight-medium">ผลรวม <?= $row["sum"] ?> ราคา <?= $row["price"] ?> บาท </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="align-items-center align-self-start" style="text-align: center;">
-                                    <p class="text-success  mb-0 font-weight-medium">ผลรวม 50 ราคา 2500 บาท </p>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="text-muted font-weight-normal" style="text-align: center;">สวยดีราคาถูก</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <img src="img/a.png" width="60px">
-                            </div>
-                            <div class="col-12">
-                                <div class=" align-items-center align-self-start" style="text-align: center;">
-                                    <h3 class="mb-0">092-6164466</h3>
-                                    <br>
-                                </div>
-                                <div class="align-items-center align-self-start" style="text-align: center;">
-                                    <p class="text-success  mb-0 font-weight-medium">ผลรวม 50 ราคา 2500 บาท </p>
-                                </div>
+                                <h6 class="text-muted font-weight-normal" style="text-align: center;">สวยดีราคาถูก</h6>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal" style="text-align: center;">พลังก้าวหน้าและเสน่ห์</h6>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <img src="img/t.png" width="60px">
-                            </div>
-                            <div class="col-12">
-                                <div class=" align-items-center align-self-start" style="text-align: center;">
-                                    <h3 class="mb-0">092-6164466</h3>
-                                    <br>
-                                </div>
-                                <div class="align-items-center align-self-start" style="text-align: center;">
-                                    <p class="text-success  mb-0 font-weight-medium">ผลรวม 50 ราคา 2500 บาท </p>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="text-muted font-weight-normal" style="text-align: center;">พลังก้าวหน้าและเสน่ห์</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <img src="img/t.png" width="60px">
-                            </div>
-                            <div class="col-12">
-                                <div class=" align-items-center align-self-start" style="text-align: center;">
-                                    <h3 class="mb-0">092-6164466</h3>
-                                    <br>
-                                </div>
-                                <div class="align-items-center align-self-start" style="text-align: center;">
-                                    <p class="text-success  mb-0 font-weight-medium">ผลรวม 50 ราคา 2500 บาท </p>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="text-muted font-weight-normal" style="text-align: center;">พลังก้าวหน้าและเสน่ห์</h6>
-                    </div>
-                </div>
-            </div>
+            <?php   }
+            } ?>
+
         </div>
     </div>
