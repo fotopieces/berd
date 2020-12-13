@@ -64,7 +64,7 @@
                     ?>
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
+                        <a class="dropdown-item preview-item" onclick="goPage('index.php?page=admin&sub-page=add-catalog')">
                             <div class="preview-thumbnail">
                                 <div class="preview-icon bg-dark rounded-circle">
                                     <i class="mdi mdi-link-variant text-warning"></i>
