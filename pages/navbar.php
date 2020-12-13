@@ -90,6 +90,19 @@
                         </a>
 
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item preview-item" onclick="goPage('index.php?page=admin&sub-page=add-page')">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-dark rounded-circle">
+                                    <i class="mdi mdi-link-variant text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <p class="preview-subject mb-1">เพิ่มคำทำนายหมายเลข</p>
+                                <p class="text-muted ellipsis mb-0"> เพิ่มข้อมูลคำทำนาย </p>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item" onclick="goPage('logout.php')">
                             <div class="preview-thumbnail">
                                 <div class="preview-icon bg-dark rounded-circle">
