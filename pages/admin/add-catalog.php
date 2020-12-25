@@ -69,6 +69,9 @@
             document.getElementById("id").value = id;
             document.getElementById("status").value = status;
             document.getElementById("name").value = name;
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'fast');
 
         }
 

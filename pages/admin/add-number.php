@@ -233,7 +233,9 @@
             document.getElementById("openday").value = openday;
             document.getElementById("closeday").value = closeday;
             document.getElementById("remark").value = remark;
-
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'fast');
         }
 
         function dodelete(id) {
