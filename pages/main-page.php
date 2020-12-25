@@ -98,8 +98,9 @@
                                     ผลรวม : &nbsp;
 
                                     <select class="form-control" style="color: white;">
+                                        <option value="0">เลือกผลรวม</option>
                                         <?php for ($x = 8; $x <= 80; $x++) { ?>
-                                            <option><?= $x ?></option>
+                                            <option value="<?= $x ?>"><?= $x ?></option>
                                         <?php } ?>
                                     </select>&nbsp;&nbsp;
 
@@ -129,10 +130,17 @@
             <?php
                 break;
             }
-        } else { ?>
+        } else if ($_GET['net'] != "") { ?>
             <div class="row">
                 <div class="col-12" style="text-align: center;font-size: 20px;">
                     หมวดเบอร์ : <?= $_GET['net'] ?>
+                </div>
+            </div>
+        <?php
+        } else if ($_GET['price'] != "") { ?>
+            <div class="row">
+                <div class="col-12" style="text-align: center;font-size: 20px;">
+                    หมวดเบอร์ : <?= $_GET['price'] ?>
                 </div>
             </div>
         <?php
@@ -141,13 +149,19 @@
         <div class="row">
 
             <?php
-            if ($_GET['cat'] == "" && $_GET['net'] == "") {
-                $sql = "SELECT * FROM numbersims ORDER BY RAND() LIMIT 52 ";
+
+            if ($_GET['cat'] == "" && $_GET['net'] == "" && $_GET['price'] == "") {
+                $sql = "SELECT * FROM numbersims where status = 'Y' ORDER BY RAND() LIMIT 52 ";
             } else if ($_GET['cat'] != "") {
-                $sql = "SELECT * FROM numbersims where catalogid like '%" . $_GET['cat'] . "%' ";
+                $sql = "SELECT * FROM numbersims where status = 'Y' and catalogid like '%" . $_GET['cat'] . "%' ";
             } else if ($_GET['net'] != "") {
-                $sql = "SELECT * FROM numbersims where networkid like '%" . $_GET['net'] . "%' ";
+                $sql = "SELECT * FROM numbersims where status = 'Y' and networkid like '%" . $_GET['net'] . "%' ";
+            } else if ($_GET['price'] != "") {
+                $p = explode("-", $_GET['price']);
+                $sql = "SELECT * FROM numbersims where status = 'Y' and price BETWEEN " . $p[0] . " AND " . $p[1];
             }
+
+            //echo $sql;
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>

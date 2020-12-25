@@ -41,38 +41,38 @@
 		?>
 		<li class="nav-item nav-category"><span class="nav-link" style="font-size: 20px; color: white;"><b>หมวดเบอร์ตามราคา</b></span>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=1-1000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">ต่ำกว่า 1,000
 					บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=1000-2999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">1,000-2,999 บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=3000-4999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">3,000-4,999 บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=5000-9999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">5,000-9,999 บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=10000-20000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">10,000-20,000 บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=20000-30000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">20,000-30,000 บาท</span>
 			</a>
 		</li>
-		<li class="nav-item menu-items"><a class="nav-link" href="indexs.html">
+		<li class="nav-item menu-items"><a class="nav-link" href="?price=30000-100000000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
 				</span> <span class="menu-title">30,000 บาท ขึ้นไป</span>
 			</a>
