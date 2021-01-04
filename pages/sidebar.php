@@ -6,19 +6,25 @@
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?net=AIS">
 				<span class="menu-icon"> <img src="img/a.png" width="30px">
-				</span> <span class="menu-title">เบอร์ Ais</span>
+				</span> <span class="menu-title">
+					<font color='white'> เบอร์ Ais</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items">
 			<a class="nav-link" href="?net=True">
 				<span class="menu-icon"> <img src="img/t.png" width="30px"></span>
-				<span class="menu-title">เบอร์ True</span>
+				<span class="menu-title">
+					<font color='white'>เบอร์ True</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items">
 			<a class="nav-link" href="?net=Dtac">
 				<span class="menu-icon"> <img src="img/dt.png" width="30px"></span>
-				<span class="menu-title">เบอร์ Dtac</span>
+				<span class="menu-title">
+					<font color='white'>เบอร์ Dtac</font>
+				</span>
 			</a>
 		</li>
 		<?php
@@ -32,7 +38,9 @@
 						<span class="menu-icon">
 							<i class="mdi mdi-file-document-box"></i>
 						</span>
-						<span class="menu-title"><?= $row["name"] ?></span>
+						<span class="menu-title">
+							<font color='white'><?= $row["name"] ?></font>
+						</span>
 					</a>
 				</li>
 		<?php
@@ -43,38 +51,52 @@
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=1-1000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">ต่ำกว่า 1,000
-					บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>ต่ำกว่า 1,000
+						บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=1000-2999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">1,000-2,999 บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>1,000-2,999 บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=3000-4999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">3,000-4,999 บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>3,000-4,999 บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=5000-9999">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">5,000-9,999 บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>5,000-9,999 บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=10000-20000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">10,000-20,000 บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>10,000-20,000 บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=20000-30000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">20,000-30,000 บาท</span>
+				</span> <span class="menu-title">
+					<font color='white'>20,000-30,000 บาท</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?price=30000-100000000">
 				<span class="menu-icon"> <i class="mdi mdi-speedometer"></i>
-				</span> <span class="menu-title">30,000 บาท ขึ้นไป</span>
+				</span> <span class="menu-title">
+					<font color='white'>30,000 บาท ขึ้นไป</font>
+				</span>
 			</a>
 		</li>
 		<li class="nav-item nav-category">

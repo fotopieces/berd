@@ -56,8 +56,6 @@
       } else if ($_GET['cat'] != "") {
         include 'pages/main-page.php';
       }
-
-
       ?>
       <!-- content-wrapper ends -->
       <!-- partial:partials/_footer.html -->

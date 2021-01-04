@@ -1,4 +1,16 @@
 <?php
+function checkSql($sql)
+{
+    $have = strpos($sql, "RAND()");
+
+    if ($have != "") {
+
+        return "SELECT * FROM numbersims where status = 'Y'";
+    } else {
+
+        return $sql;
+    }
+}
 function todate($date)
 {
     $pieces = explode("-", $date);
