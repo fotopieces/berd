@@ -4,11 +4,11 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card" id="showSc">
                     <div class="card-body">
-                        <h4 class="card-title">คำทำนายตามผลรวม</h4>
-                        <form id="form" method="post" action="pages/admin/save-page.php">
+                        <h4 class="card-title">คำทำนายคู่เลข</h4>
+                        <form id="form" method="post" action="pages/admin/save-couple.php">
                             <input type="hidden" id="id" name="id">
 
-                            <p class="card-description"> ผลรวม
+                            <p class="card-description"> คู่เลข
                             </p>
 
                             <input style="color: white;" class="typeahead" type="text" id="name" name="name" value="">
@@ -29,7 +29,7 @@
                             <table class="table table-bordered">
                                 <tbody>
                                     <?php
-                                    $sql = "SELECT * FROM pagesims  where status = 'S'  ORDER BY id asc   ";
+                                    $sql = "SELECT * FROM pagesims  where status = 'C'  ORDER BY id asc   ";
                                     $result = $conn->query($sql);
                                     if ($result->num_rows > 0) {
                                         while ($row = $result->fetch_assoc()) {
@@ -96,7 +96,7 @@
 
         function dodelete(id) {
             if (confirm("ต้องการลบข้อมูลหรือไม่")) {
-                window.location = "pages/admin/delete-page.php?id=" + id;
+                window.location = "pages/admin/delete-couple.php?id=" + id;
             }
         }
     </script>
