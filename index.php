@@ -55,6 +55,8 @@
         include 'pages/main-page.php';
       } else if ($_GET['cat'] != "") {
         include 'pages/main-page.php';
+      } else if ($_GET['page'] == "ans") {
+        include 'pages/ans-page.php';
       }
       ?>
       <!-- content-wrapper ends -->
