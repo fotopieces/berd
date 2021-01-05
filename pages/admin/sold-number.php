@@ -10,5 +10,5 @@ $sql = "UPDATE numbersims SET status = 'Sold' , soldday =  CAST('" . date("Y-m-d
 if (checkLogin()) {
     $conn->query($sql);
 }
-echo "<script>window.location = '../../index.php?page=admin&sub-page=add-number'</script>";
 include '../end-conn.php';
+echo "<script>window.location = '../../index.php?page=admin&sub-page=add-number'</script>";

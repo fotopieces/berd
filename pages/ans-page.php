@@ -155,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2 col-xl-12 grid-margin stretch-card d-none d-lg-flex">
+            <div class="col-md-2 col-xl-12 grid-margin stretch-card ">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">ค้นหาเบอร์</h4>

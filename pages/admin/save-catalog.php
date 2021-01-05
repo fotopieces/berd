@@ -22,5 +22,5 @@ if (trim($id) == "") {
         $conn->query($sql);
     }
 }
-echo "<script>window.location = '../../index.php?page=admin&sub-page=add-catalog'</script>";
 include '../end-conn.php';
+echo "<script>window.location = '../../index.php?page=admin&sub-page=add-catalog'</script>";

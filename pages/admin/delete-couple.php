@@ -8,5 +8,5 @@ $sql = "delete FROM pagesims where id = " . $_GET["id"];
 if (checkLogin()) {
     $conn->query($sql);
 }
-echo "<script>window.location = '../../index.php?page=admin&sub-page=add-couple'</script>";
 include '../end-conn.php';
+echo "<script>window.location = '../../index.php?page=admin&sub-page=add-couple'</script>";
