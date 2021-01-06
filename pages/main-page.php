@@ -224,7 +224,7 @@
                 while ($row = $result->fetch_assoc()) { ?>
                     <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                         <div class="card">
-                            <div class="card-body" style="cursor: pointer" onclick="doAns()">
+                            <div class="card-body" style="cursor: pointer" onclick="doAns(<?= $row['number'] ?>)">
                                 <div class="row">
                                     <div class="col-12" style="text-align: center;">
                                         <?php
@@ -256,8 +256,8 @@
         </div>
     </div>
     <script>
-        function doAns() {
-            window.location = "?page=ans";
+        function doAns(number) {
+            window.location = "?page=ans&number=0" + number;
         }
 
         function dofucus(n, val) {

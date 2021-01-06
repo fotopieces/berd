@@ -65,3 +65,28 @@ function colornumber($number)
     }
     return $number;
 }
+function subNumber($number)
+{
+    $nn0 = substr($number, 0, 3);
+    $nn1 = substr($number, 3, 2);
+    $nn2 = substr($number, 4, 2);
+    $nn3 = substr($number, 5, 2);
+    $nn4 = substr($number, 6, 2);
+    $nn5 = substr($number, 7, 2);
+    $nn6 = substr($number, 8, 2);
+    $len = strlen($number);
+    $sum = 0;
+    $count = 0;
+    while ($count < $len) {
+        $sum = $sum + $number[$count];
+        $count++;
+    }
+
+    return $nn0 . "-"
+        . $nn1 . " "
+        . $nn2 . " "
+        . $nn3 . " "
+        . $nn4 . " "
+        . $nn5 . " "
+        . $nn6 . " " . "  (" . $sum . ")";
+}
