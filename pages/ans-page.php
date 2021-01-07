@@ -20,8 +20,9 @@
             <div class="col-md-2 col-xl-12 grid-margin stretch-card ">
                 <div class="card">
                     <div class="card-body">
+                        <h1 style="text-align:center" class="card-title">หมายเลข : <?= $_GET['number'] ?></h1>
 
-                        <h1 style="text-align:center" class="card-title">
+                        <h2 style="text-align:center" class="card-title">
                             <?php
                             $number = $_GET['number'];
                             $nn0 = substr($number, 0, 3);
@@ -45,15 +46,13 @@
                                 . $nn3 . " "
                                 . $nn4 . " "
                                 . $nn5 . " "
-                                . $nn6 . " " . "  (" . $sum . ")";
+                                . $nn6 . " " . "  ( ผลรวม : " . $sum . ")";
                             // echo countGoodNumber($number);
-                            ?></h1>
+                            ?></h2>
                         <h6 style="text-align:center" class="card-title">
                             <?= printStar($number) ?>
-
-
-
                         </h6>
+                        <h3 style="text-align:center" class="card-title"><?= printG($number) ?></h3>
                         <?php
                         $sql = "SELECT * FROM pagesims  where status = 'S' and name = '" . $sum . "'  ORDER BY id asc   ";
                         $result = $conn->query($sql);

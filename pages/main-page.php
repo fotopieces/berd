@@ -2,7 +2,7 @@
     <div class="content-wrapper">
         <?php
         if ($_GET['cat'] == "" && $_GET['net'] == "") { ?>
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-md-2 col-xl-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -11,11 +11,17 @@
                                 <div class="item">
                                     <img src="img/1.jpg" alt="">
                                 </div>
+                                <div class="item">
+                                    <img src="img/1.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="img/1.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         <?php } ?>
         <div class="row">
             <div class="col-md-2 col-xl-4 grid-margin stretch-card">

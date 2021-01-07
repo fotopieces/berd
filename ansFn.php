@@ -128,3 +128,40 @@ function printStar($cnumber)
     }
     return $score;
 }
+function printG($cnumber)
+{
+    $fn0 = substr($cnumber, 0, 3);
+    $fn1 = substr($cnumber, 3, 2);
+    $fn2 = substr($cnumber, 4, 2);
+    $fn3 = substr($cnumber, 5, 2);
+    $fn4 = substr($cnumber, 6, 2);
+    $fn5 = substr($cnumber, 7, 2);
+    $fn6 = substr($cnumber, 8, 2);
+
+    $len = strlen($cnumber);
+    $sum = 0;
+    $count = 0;
+    while ($count < $len) {
+        $sum = $sum + $cnumber[$count];
+        $count++;
+    }
+    $score = getStar($sum) + getStar($fn1) + getStar($fn2) + getStar($fn3) + getStar($fn4) + getStar($fn5) + getStar($fn6);
+    if ($score == 0) {
+        return "เกรด F : เบอร์เหนื่อยมากๆ";
+    } else if ($score == 1) {
+        return "เกรด F : เบอร์เหนื่อยมากๆ";
+    } else if ($score == 2) {
+        return "เกรด D : เบอร์ค่อยข้างเหนื่อย";
+    } else if ($score == 3) {
+        return "เกรด C : เบอร์พอใช้";
+    } else if ($score == 4) {
+        return "เกรด B : เบอร์ธรรมดาทั่วไป";
+    } else if ($score == 5) {
+        return "เกรด B : เบอร์ธรรมดาทั่วไป";
+    } else if ($score == 6) {
+        return "เกรด A : เบอร์คุณภาพดี";
+    } else if ($score == 7) {
+        return "เกรด A+ : เบอร์สุดยอดดีมากๆ";
+    }
+    return $score;
+}
