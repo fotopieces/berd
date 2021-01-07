@@ -1,151 +1,21 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
-
-            <div class="col-md-12 grid-margin stretch-card">
+            <div class="col-md-2 col-xl-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <div style="text-align:center">
-                            <h1 class="card-title mb-1">เบอร์ระดับ มงคลแท้ (ดีมาก)</h1>
+                        <h4 class="card-title">โปรแกรมทำนายเบอร์โทร</h4>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="preview-list">
-                                    <div class="preview-item border-bottom">
-
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">สติปัญญา
-                                                    <br />
-                                                    <br />
-                                                    <img src="img/star-y.png" />
-                                                    <img src="img/star-y.png" />
-                                                    <img src="img/star-y.png" />
-                                                    <img src="img/star-y.png" />
-                                                    <img src="img/bg-star.png" />
-                                                    <img src="img/bg-star.png" />
-                                                    <img src="img/bg-star.png" />
-
-                                                </h4>
-
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item border-bottom">
-
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">การงาน</h4>
-                                                <br />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item border-bottom">
-
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">การเงิน</h4>
-                                                <br />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item border-bottom">
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">ความรัก </h4>
-                                                <br />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="preview-item  border-bottom">
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">โชคลาภ</h4>
-                                                <br />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="preview-item border-bottom">
-                                        <div class="preview-item-content d-sm-flex flex-grow">
-                                            <div class="flex-grow">
-                                                <h4 class="preview-subject">สุขภาพ </h4>
-                                                <br />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/star-y.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-                                                <img src="img/bg-star.png" />
-
-
-                                            </div>
-                                            <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                                <br>
-                                                <p class="text-muted mb-0">ค่าคะแนน 70% </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
+                        <form class="forms-sample">
+                            <div class="form-group">
+                                <input style="color: white;" type="text" id="num" class="form-control" id="exampleInputName1" placeholder="กรุณากรอกเบอร์โทร">
                             </div>
-                        </div>
+                            <button type="button" onclick="sendNum()" class="btn btn-primary mr-2">ทำนาย</button>
+                        </form>
                     </div>
                 </div>
             </div>
+
 
             <div class="col-md-2 col-xl-12 grid-margin stretch-card ">
                 <div class="card">
@@ -176,8 +46,14 @@
                                 . $nn4 . " "
                                 . $nn5 . " "
                                 . $nn6 . " " . "  (" . $sum . ")";
+                            // echo countGoodNumber($number);
                             ?></h1>
+                        <h6 style="text-align:center" class="card-title">
+                            <?= printStar($number) ?>
 
+
+
+                        </h6>
                         <?php
                         $sql = "SELECT * FROM pagesims  where status = 'S' and name = '" . $sum . "'  ORDER BY id asc   ";
                         $result = $conn->query($sql);
@@ -312,3 +188,15 @@
             </div>
         </div>
     </div>
+    <script>
+        function sendNum() {
+            var num = document.getElementById("num").value;
+            var n = num.length;
+            if (n != 10) {
+                alert("กรุณากรอกหมายเลขให้ครบ");
+            } else {
+                window.location = "?page=ans&number=" + num;
+            }
+
+        }
+    </script>

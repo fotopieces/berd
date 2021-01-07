@@ -25,9 +25,9 @@
 
                         <form class="forms-sample">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="กรุณากรอกเบอร์โทร">
+                                <input style="color: white;" type="text" id="num" class="form-control" id="exampleInputName1" placeholder="กรุณากรอกเบอร์โทร">
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">ทำนาย</button>
+                            <button type="button" onclick="sendNum()" class="btn btn-primary mr-2">ทำนาย</button>
                         </form>
                     </div>
                 </div>
@@ -258,6 +258,17 @@
     <script>
         function doAns(number) {
             window.location = "?page=ans&number=0" + number;
+        }
+
+        function sendNum() {
+            var num = document.getElementById("num").value;
+            var n = num.length;
+            if (n != 10) {
+                alert("กรุณากรอกหมายเลขให้ครบ");
+            } else {
+                window.location = "?page=ans&number=" + num;
+            }
+
         }
 
         function dofucus(n, val) {

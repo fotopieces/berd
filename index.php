@@ -40,6 +40,7 @@
 <body>
   <?php include 'pages/conn.php'; ?>
   <?php include 'fn.php'; ?>
+  <?php include 'ansFn.php'; ?>
   <?php include 'pages/check-login.php'; ?>
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
