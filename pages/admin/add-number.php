@@ -9,14 +9,15 @@
                     <div class="card-body">
                         <form id="addNumber" method="post" action="pages/admin/save-number.php">
                             <input type="hidden" id="id" name="id">
+
                             <input type="hidden" id="cats" name="cats">
                             <p class="card-description">
-                                <h4 class="card-title">เพิ่มเบอร์</h4>
-                                <font color="red">ใส่ * หน้าหลังหากต้องการสีแดง</font>&nbsp&nbsp&nbsp
+                            <h4 class="card-title">เพิ่มเบอร์</h4>
+                            <font color="red">ใส่ * หน้าหลังหากต้องการสีแดง</font>&nbsp&nbsp&nbsp
 
-                                <font color="green">ใส่ @ หน้าหลังหากต้องการสีเขียว</font>&nbsp&nbsp&nbsp
+                            <font color="green">ใส่ @ หน้าหลังหากต้องการสีเขียว</font>&nbsp&nbsp&nbsp
 
-                                <font color="orange">ใส่ # หน้าหลังหากต้องการสีเหลือง</font>
+                            <font color="orange">ใส่ # หน้าหลังหากต้องการสีเหลือง</font>
                             </p>
                             <div class="row">
                                 <div class="col-md-12">
@@ -69,12 +70,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="display: none;">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">เงินในซิม</label>
+                                        <label class="col-sm-3 col-form-label">วันหมดอายุ</label>
                                         <div class="col-sm-9">
-                                            <input style="color: white;" class="typeahead" type="text" id="priceinsim" name="priceinsim">
+                                            <input style="background-color: #2a3038;color: white;" name="closeday" type="text" id="closeday" readonly="readonly" value="" />
                                         </div>
                                     </div>
                                 </div>
@@ -88,15 +89,24 @@
                                 </div>
                             </div>
                             <div class="row">
+
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">วันหมดอายุ</label>
                                         <div class="col-sm-9">
-                                            <input style="background-color: #2a3038;color: white;" name="closeday" type="text" id="closeday" readonly="readonly" value="" />
+                                            <input style="color: white;" class="typeahead" type="text" id="priceinsim" name="priceinsim">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">ราคาขาย</label>
+                                        <div class="col-sm-9">
+                                            <input style="color: white;" class="typeahead" type="text" id="price" name="price">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="display: none;">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">ราคาต้นทุน</label>
                                         <div class="col-sm-9">
@@ -108,12 +118,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">ราคาขาย</label>
+                                        <label class="col-sm-3 col-form-label">ลำดับ</label>
                                         <div class="col-sm-9">
-                                            <input style="color: white;" class="typeahead" type="text" id="price" name="price">
+                                            <input style="color: white;" class="typeahead" type="text" id="seq" name="seq">
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">หมายเหตุ</label>
@@ -158,11 +169,10 @@
                                             <tr>
 
                                                 <td style="text-align:center"> <?= $row["number"] ?> </td>
-                                                <td style="text-align:center"> เงินในซิม</br>(<font color="red"> <?= $row["priceinsim"] ?> ฿</font>) </td>
-                                                <td style="text-align:center"> ต้นทุน</br>(<font color="red"> <?= $row["baseprice"] ?> ฿</font>) </td>
-                                                <td style="text-align:center"> ขาย</br>( <font color="red"><?= $row["price"] ?> ฿</font>)</td>
-                                                <td style="text-align:center"> เปิดก่อนวันที่</br>(<font color="green"> <?= todate($row["openday"]) ?> </font>) </td>
-                                                <td style="text-align:center"> หมดอายุ</br>(<font color="red"> <?= todate($row["closeday"]) ?> </font>) </td>
+                                                <td style="text-align:center"> ลำดับ</br>(<font color="red"> <?= $row["seq"] ?> </font>) </td>
+                                                <td style="text-align:center"> ราคาขาย</br>( <font color="red"><?= $row["price"] ?> ฿</font>)</td>
+                                                <td style="text-align:center"> วันหมดอายุ</br>(<font color="red"> <?= $row["priceinsim"] ?> </font>) </td>
+                                                <td style="text-align:center"> วันเพิ่มข้อมูล</br>(<font color="red"> <?= todate($row["closeday"]) ?> </font>) </td>
                                                 <td style="text-align:center"> วันขาย</br>(<font color="red"> <?= todate($row["soldday"]) ?> </font>) </td>
                                                 <td align="center" style="width: 15%">
                                                     <!-- 						id,cat,networkid,numbershow,priceinsim,baseprice,price,openday,closeday -->
@@ -176,7 +186,8 @@
                                                         '<?= $row["price"] ?>',
                                                         '<?= todate($row["openday"]) ?>',
                                                         '<?= todate($row["closeday"]) ?>',
-                                                        '<?= $row["remark"] ?>')">
+                                                        '<?= $row["remark"] ?>',
+                                                        '<?= $row["seq"] ?>')">
                                                         <img src="img/edit-icon.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="ขาย" href="javascript:doSold('<?= $row["id"] ?>')"><img src="img/s.png" width="30px" height="30px" /></a>&nbsp;
                                                     <a title="กลับมาขายใหม่" href="javascript:doReSell('<?= $row["id"] ?>')"><img src="img/re.png" width="30px" height="30px" /></a>&nbsp;
@@ -213,7 +224,7 @@
             return result;
         }
 
-        function doEdit(id, cat, networkid, numbershow, priceinsim, baseprice, price, openday, closeday, remark) {
+        function doEdit(id, cat, networkid, numbershow, priceinsim, baseprice, price, openday, closeday, remark, seq) {
 
 
             var testArray = cat.split(',');
@@ -233,6 +244,7 @@
             document.getElementById("openday").value = openday;
             document.getElementById("closeday").value = closeday;
             document.getElementById("remark").value = remark;
+            document.getElementById("seq").value = seq;
             $('html, body').animate({
                 scrollTop: 0
             }, 'fast');
@@ -268,15 +280,11 @@
             } else if (document.getElementById("networks").value == "0") {
                 alert("กรุณาเลือกเครือข่าย");
             } else if (document.getElementById("priceinsim").value == "") {
-                alert("กรุณากรอกยอดเงินในซิม");
-            } else if (document.getElementById("openday").value == "") {
-                alert("กรุณาเลือกวันที่เปิดซิม");
-            } else if (document.getElementById("closeday").value == "") {
-                alert("กรุณาเลือกวันที่ซิมหมดอายุ");
-            } else if (document.getElementById("baseprice").value == "") {
-                alert("กรุณากรอกราคาต้นทุน");
+                alert("กรุณากรอกวันหมดอายุ");
             } else if (document.getElementById("price").value == "") {
                 alert("กรุณากรอกราคา");
+            } else if (document.getElementById("seq").value == "") {
+                alert("กรุณาลำดับ");
             } else {
                 if (confirm("ต้องการบันทึกข้อมูลหรือไม่")) {
                     document.getElementById("addNumber").submit();

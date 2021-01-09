@@ -20,9 +20,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <label for="exampleTextarea1">เบอร์โทร,ราคา,วันหมดอายุ dd-mm-yyyy,ลำดับ</label>
+                                            <label for="exampleTextarea1">เบอร์โทร,ราคา,วันหมดอายุ m/yy,ลำดับ</label>
                                             <br>
-                                            <label for="exampleTextarea1">ตัวอย่าง : 0926164466,2000,05-01-2021,001</label>
+                                            <label for="exampleTextarea1">ตัวอย่าง : 0926164466,2000,4/21,001</label>
                                             <textarea class="form-control" style="color: white;line-height: 16pt" id="data" rows="10" name="data"></textarea>
                                         </div>
                                     </div>
@@ -106,11 +106,10 @@
                                             <tr>
 
                                                 <td style="text-align:center"> <?= $row["number"] ?> </td>
-                                                <td style="text-align:center"> เงินในซิม</br>(<font color="red"> <?= $row["priceinsim"] ?> ฿</font>) </td>
-                                                <td style="text-align:center"> ต้นทุน</br>(<font color="red"> <?= $row["baseprice"] ?> ฿</font>) </td>
-                                                <td style="text-align:center"> ขาย</br>( <font color="red"><?= $row["price"] ?> ฿</font>)</td>
-                                                <td style="text-align:center"> เปิดก่อนวันที่</br>(<font color="green"> <?= todate($row["openday"]) ?> </font>) </td>
-                                                <td style="text-align:center"> หมดอายุ</br>(<font color="red"> <?= todate($row["closeday"]) ?> </font>) </td>
+                                                <td style="text-align:center"> ลำดับ</br>(<font color="red"> <?= $row["seq"] ?> </font>) </td>
+                                                <td style="text-align:center"> ราคาขาย</br>( <font color="red"><?= $row["price"] ?> ฿</font>)</td>
+                                                <td style="text-align:center"> วันหมดอายุ</br>(<font color="red"> <?= $row["priceinsim"] ?> </font>) </td>
+                                                <td style="text-align:center"> วันเพิ่มข้อมูล</br>(<font color="red"> <?= todate($row["closeday"]) ?> </font>) </td>
                                                 <td style="text-align:center"> วันขาย</br>(<font color="red"> <?= todate($row["soldday"]) ?> </font>) </td>
                                                 <td align="center" style="width: 15%">
                                                     <!-- 						id,cat,networkid,numbershow,priceinsim,baseprice,price,openday,closeday -->

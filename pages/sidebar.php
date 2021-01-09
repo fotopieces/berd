@@ -42,7 +42,7 @@
 			</a>
 		</li>
 		<?php
-		$sql = "SELECT * FROM catalogsims order by id asc";
+		$sql = "SELECT * FROM catalogsims where status = 'Y' order by id asc";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {

@@ -3,6 +3,7 @@ include '../conn.php';
 include '../../fn.php';
 $id = $_POST["id"];
 $cat = $_POST["cats"];
+$seq = $_POST["seq"];
 $numbershow = $_POST["number"];
 $number = $_POST["number"];
 $network = $_POST["network"];
@@ -65,16 +66,17 @@ if ($result->num_rows > 0 && trim($id) == "") {
 }
 $sql = "";
 if (trim($id) == "") {
-    $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith)
+    $sql = "INSERT INTO numbersims(seq,number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith)
             VALUES (
+                '" . $seq . "',
                 '" . $number . "',
                 '" . $numbershow . "',
                 '" . $cat . "," . "',
                 '" . $network . "',
                 '" . $baseprice . "',
                 '" . $priceinsim . "',
-                CAST('" . $openday . "' AS DATE) ,
-                CAST('" . $closeday . "' AS DATE) ,
+                NOW() ,
+                NOW() ,
             '',
             'Y',
             '" . $price . "',
@@ -95,8 +97,9 @@ if (trim($id) == "") {
 } else {
     $sql = "delete FROM numbersims where id = " . trim($id);
     $conn->query($sql);
-    $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith)
+    $sql = "INSERT INTO numbersims(seq,number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith)
     VALUES (
+        '" . $seq . "',
         '" . $number . "',
         '" . $numbershow . "',
         '" . $cat . "," . "',

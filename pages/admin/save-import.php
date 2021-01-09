@@ -15,7 +15,7 @@ foreach ($datas as $value) {
     $priceinsim = 0;
     $price =  $values[1];
     $openday = "";
-    $closeday = toDateSql($values[2]);
+    $closeday = $values[2];
     $status = "Y";
     $remark = "";
     $seq = $values[3];
@@ -69,32 +69,34 @@ foreach ($datas as $value) {
     $result = $conn->query($sql);
     if ($result->num_rows > 0 && trim($id) == "") {
     } else {
-        $sql = "";
-        $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith,seq)
-            VALUES (
-                '" . $number . "',
-                '" . $numbershow . "',
-                '" . $cat . "," . "',
-                '" . $network . "',
-                '" . $baseprice . "',
-                '" . $priceinsim . "',
-                CAST('" . $closeday . "' AS DATE) ,
-                CAST('" . $closeday . "' AS DATE) ,
-            '',
-            'Y',
-            '" . $price . "',
-            '" . $remark . "',
-            '" . $sum . "',
-            '" . $n1 . "',
-            '" . $n2 . "',
-            '" . $n3 . "',
-            '" . $n4 . "',
-            '" . $n5 . "',
-            '" . $n6 . "',
-            '" . $n7 . "',	
-            '" . $startw . "',
-            '" . $seq . "'
-            )";
+        if ($number != "") {
+            $sql = "";
+            $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith,seq)
+                VALUES (
+                    '" . $number . "',
+                    '" . $numbershow . "',
+                    '" . $cat . "," . "',
+                    '" . $network . "',
+                    '" . $baseprice . "',
+                    '" . $closeday . "',
+                    NOW() ,
+                    NOW() ,
+                '',
+                'Y',
+                '" . $price . "',
+                '" . $remark . "',
+                '" . $sum . "',
+                '" . $n1 . "',
+                '" . $n2 . "',
+                '" . $n3 . "',
+                '" . $n4 . "',
+                '" . $n5 . "',
+                '" . $n6 . "',
+                '" . $n7 . "',	
+                '" . $startw . "',
+                '" . $seq . "'
+                )";
+        }
         if (checkLogin()) {
             $conn->query($sql);
         }
