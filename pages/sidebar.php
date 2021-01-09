@@ -4,6 +4,20 @@
 		<li class="nav-item nav-category">
 			<span class="nav-link" style="font-size: 20px; color: white;"><b>หมวดเบอร์โทร</b></span>
 		</li>
+		<li class="nav-item menu-items"><a class="nav-link" href="javascript: window.location = 'index.php'">
+				<span class="menu-icon"> <img src="img/h.png" width="30px">
+				</span> <span class="menu-title">
+					<font color='white'> หน้าแรก</font>
+				</span>
+			</a>
+		</li>
+		<li class="nav-item menu-items"><a class="nav-link" href="javascript: window.location = 'https://shopee.co.th/jumbosim?v=faa&smtt=0.0.5&fbclid=IwAR26xNsZ_iRzXF0IoP00j-Nq3BAkD0ZEjJs1P538meReAi0z3S1l2fImPEI'">
+				<span class="menu-icon"> <img src="img/shop.png" width="30px">
+				</span> <span class="menu-title">
+					<font color='white'> ร้านของเราใน Shopee </font>
+				</span>
+			</a>
+		</li>
 		<li class="nav-item menu-items"><a class="nav-link" href="?net=AIS">
 				<span class="menu-icon"> <img src="img/a.png" width="30px">
 				</span> <span class="menu-title">

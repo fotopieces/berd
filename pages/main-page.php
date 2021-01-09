@@ -12,10 +12,10 @@
                                     <img src="img/1.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img src="img/1.jpg" alt="">
+                                    <img src="img/2.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img src="img/1.jpg" alt="">
+                                    <img src="img/3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -35,6 +35,14 @@
                             </div>
                             <button type="button" onclick="sendNum()" class="btn btn-primary mr-2">ทำนาย</button>
                         </form>
+                        <br>
+                        <h4 class="card-title">ค้นหาหมายเลขที่ต้องการ</h4>
+
+                        <div class="form-group">
+                            <input style="color: white;" type="text" value="<?= $_GET['anyNum'] ?>" id="find" class="form-control" id="exampleInputName1" placeholder="กรุณากรอกเบอร์โทร">
+                        </div>
+                        <button type="button" onclick="findNum()" class="btn btn-primary mr-2">ค้นหา</button>
+
                     </div>
                 </div>
             </div>
@@ -252,7 +260,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h6 class="text-muted font-weight-normal" style="text-align: center;">สวยดีราคาถูก</h6>
+                                <h6 class="text-muted font-weight-normal" style="text-align: center;"><?= $row["remark"] ?></h6>
                             </div>
                         </div>
                     </div>
@@ -264,6 +272,12 @@
     <script>
         function doAns(number) {
             window.location = "?page=ans&number=0" + number;
+        }
+
+        function findNum() {
+            var num = document.getElementById("find").value;
+            window.location = "?search=search&n1=&n2=&n3=&n4=&n5=&n6=&n7=&n8=&n9=&sum=0&anyNum=" + num;
+
         }
 
         function sendNum() {
