@@ -5,7 +5,7 @@
 <head>
   <!-- Required meta tags -->
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <title>เบอร์ดีราคาถูก.com</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -42,13 +42,55 @@
   <?php include 'fn.php'; ?>
   <?php include 'ansFn.php'; ?>
   <?php include 'pages/check-login.php'; ?>
+  <div>
+
+    <div class="row">
+      <div class="col-md-2 col-xl-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"></h4>
+            <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+              <div class="item">
+                <img src="img/1.jpg" width="100%" height="70%" alt="">
+              </div>
+              <div class="item">
+                <img src="img/2.jpg" width="100%" height="70%" alt="">
+              </div>
+              <div class="item">
+                <img src="img/3.jpg" width="100%" height="70%" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="mdi mdi-menu"></span>
+      </button>
+      <ul class="navbar-nav w-100">
+        <!-- <li class="nav-item w-100">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+                    <input type="text" class="form-control" placeholder="Search products">
+                </form>
+            </li> -->
+      </ul>
+
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="mdi mdi-format-line-spacing"></span>
+      </button>
+    </div>
+  </div>
   <div class="container-scroller">
+
     <!-- partial:partials/_sidebar.html -->
     <?php include 'pages/sidebar.php'; ?>
     <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
+    <div class="container page-body-wrapper">
       <!-- partial:partials/_navbar.html -->
-      <?php include 'pages/navbar.php'; ?>
+      <?php //include 'pages/navbar.php'; 
+      ?>
       <!-- partial -->
       <?php
       if ($_GET['page'] == "admin") {

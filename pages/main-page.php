@@ -1,28 +1,5 @@
-<div class="main-panel">
+<div class="main-panel" style="padding-top: 0px;">
     <div class="content-wrapper">
-        <?php
-        if ($_GET['cat'] == "" && $_GET['net'] == "") { ?>
-            <div class="row">
-                <div class="col-md-2 col-xl-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
-                                <div class="item">
-                                    <img src="img/1.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="img/2.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="img/3.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
         <div class="row">
             <div class="col-md-2 col-xl-4 grid-margin stretch-card">
                 <div class="card">
@@ -238,7 +215,7 @@
                 while ($row = $result->fetch_assoc()) { ?>
                     <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                         <div class="card">
-                            <div class="card-body" style="cursor: pointer" onclick="doAns(<?= $row['number'] ?>)">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-12" style="text-align: center;">
                                         <?php
@@ -250,17 +227,29 @@
                                             <img src="img/dt.png" width="60px">
                                         <?php } ?>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" style="cursor: pointer" onclick="doAns(<?= $row['number'] ?>)">
                                         <div class=" align-items-center align-self-start" style="text-align: center;">
                                             <h3 class="mb-0"><?= colornumber($row["numbershow"]) ?> </h3>
-                                            <br>
+
                                         </div>
                                         <div class="align-items-center align-self-start" style="text-align: center;">
                                             <p class="text-success  mb-0 font-weight-medium">ผลรวม <?= $row["sum"] ?><?php if ($row["price"] != 0) { ?> ราคา <?= $row["price"] ?> บาท <?php } ?></p>
                                         </div>
                                     </div>
                                 </div>
-                                <h6 class="text-muted font-weight-normal" style="text-align: center;"><?= $row["remark"] ?></h6>
+                                <h6 class="text-muted font-weight-normal" style="text-align: center;">
+                                    <a target="_blank" href="tel:0616595454">
+
+                                        <img src="img/tell.png" height="40px" width="40px">
+
+                                    </a>
+
+                                    &nbsp;
+                                    &nbsp;
+                                    <a target="_blank" href="https://line.me/ti/p/~@jangprogram2554">
+                                        <img src="img/ll.png" height="50px" width="50px">
+                                    </a>
+                                </h6>
                             </div>
                         </div>
                     </div>
