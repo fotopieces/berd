@@ -43,13 +43,16 @@
   <?php include 'ansFn.php'; ?>
   <?php include 'pages/check-login.php'; ?>
   <div>
-
     <div class="row">
+      <?php include 'pages/navbar.php';
+      ?>
+    </div>
+    <div class="row" style="padding-top: 25px;">
       <div class="col-md-2 col-xl-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title"></h4>
-            <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+            <div class="owl-carousel full-width" id="owl-carousel-basic">
               <div class="item">
                 <img src="img/1.jpg" width="100%" height="70%" alt="">
               </div>
@@ -63,23 +66,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-        <span class="mdi mdi-menu"></span>
-      </button>
-      <ul class="navbar-nav w-100">
-        <!-- <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                    <input type="text" class="form-control" placeholder="Search products">
-                </form>
-            </li> -->
-      </ul>
-
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-        <span class="mdi mdi-format-line-spacing"></span>
-      </button>
     </div>
   </div>
   <div class="container-scroller">
