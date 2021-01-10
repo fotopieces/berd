@@ -1,9 +1,9 @@
 <div class="main-panel" style="padding-top: 0px;">
     <div class="content-wrapper">
         <div class="row">
-            <div class="col-md-2 col-xl-4 grid-margin stretch-card">
+            <div class="col-md-2 col-xl-6 grid-margin stretch-card">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;">
                         <h4 class="card-title">โปรแกรมทำนายเบอร์โทร</h4>
 
                         <form class="forms-sample">
@@ -13,36 +13,34 @@
                             <button type="button" onclick="sendNum()" class="btn btn-primary mr-2">ทำนาย</button>
                         </form>
                         <br>
-                        <h4 class="card-title">ค้นหาหมายเลขที่ต้องการ</h4>
 
-                        <div class="form-group">
-                            <input style="color: white;" type="text" value="<?= $_GET['anyNum'] ?>" id="find" class="form-control" id="exampleInputName1" placeholder="กรุณากรอกเบอร์โทร">
-                        </div>
-                        <button type="button" onclick="findNum()" class="btn btn-primary mr-2">ค้นหา</button>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-xl-8 grid-margin stretch-card d-none d-lg-flex">
-                <div class="card">
-                    <div class="card-body">
+            <div class="col-md-2 col-xl-6 grid-margin stretch-card d-lg-flex">
+                <div class="card ">
+                    <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;">
                         <h4 class="card-title">ค้นหาเบอร์</h4>
 
                         <form class="forms-sample" id="formSearch">
                             <input type="hidden" name="search" value="search">
                             <div class="form-group">
+
                                 <div class="form-inline">
-                                    <input id="n0" name="n0" type="text" style="width: 50px; color: white; text-align: center; background-color: #2A3038;" disabled value="0" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n1" name="n1" value="<?= $_GET['n1'] ?>" onkeyup="dofucus(2,this)" type="text" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n2" name="n2" value="<?= $_GET['n2'] ?>" onkeyup="dofucus(3,this)" type="text" style=" background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
-                                    <input id="n3" name="n3" value="<?= $_GET['n3'] ?>" onkeyup="dofucus(4,this)" type="text" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n4" name="n4" value="<?= $_GET['n4'] ?>" type="text" onkeyup="dofucus(5,this)" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n5" name="n5" value="<?= $_GET['n5'] ?>" type="text" onkeyup="dofucus(6,this)" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n6" name="n6" value="<?= $_GET['n6'] ?>" type="text" onkeyup="dofucus(7,this)" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n7" name="n7" value="<?= $_GET['n7'] ?>" type="text" onkeyup="dofucus(8,this)" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n8" name="n8" value="<?= $_GET['n8'] ?>" type="text" onkeyup="dofucus(9,this)" style="background-color: #2A3038; width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
-                                    <input id="n9" name="n9" value="<?= $_GET['n9'] ?>" type="text" onkeyup="dofucus(9,this)" style="width: 50px; color: white; text-align: center;" maxlength="1" class="form-control">&nbsp;&nbsp;&nbsp;
+
+                                    <input id="n0" name="n0" type="text" style="width: 28px; color: white; text-align: center; background-color: #2A3038;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" disabled value="0" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n1" name="n1" value="<?= $_GET['n1'] ?>" onkeyup="dofucus(2,this)" type="text" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n2" name="n2" value="<?= $_GET['n2'] ?>" onkeyup="dofucus(3,this)" type="text" style=" background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control"> -
+                                    <input id="n3" name="n3" value="<?= $_GET['n3'] ?>" onkeyup="dofucus(4,this)" type="text" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n4" name="n4" value="<?= $_GET['n4'] ?>" type="text" onkeyup="dofucus(5,this)" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n5" name="n5" value="<?= $_GET['n5'] ?>" type="text" onkeyup="dofucus(6,this)" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n6" name="n6" value="<?= $_GET['n6'] ?>" type="text" onkeyup="dofucus(7,this)" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n7" name="n7" value="<?= $_GET['n7'] ?>" type="text" onkeyup="dofucus(8,this)" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n8" name="n8" value="<?= $_GET['n8'] ?>" type="text" onkeyup="dofucus(9,this)" style="background-color: #2A3038; width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">&nbsp;
+                                    <input id="n9" name="n9" value="<?= $_GET['n9'] ?>" type="text" onkeyup="dofucus(9,this)" style="width: 28px; color: white; text-align: center;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;" maxlength="1" class="form-control">
                                 </div>
+
                                 <!-- <div class="form-inline">
                                     เลือกเฉพาะบางเลข : &nbsp;
                                     <div class="form-check form-check-success">
@@ -86,6 +84,7 @@
                                             <input id="ck9" type="checkbox" class="form-check-input">&nbsp;&nbsp;&nbsp; 9 &nbsp;&nbsp;&nbsp; <i class="input-helper"></i></label>
                                     </div>
                                 </div> -->
+                                <br>
                                 <div class="form-inline">
                                     ผลรวม : &nbsp;
 
@@ -238,16 +237,9 @@
                                     </div>
                                 </div>
                                 <h6 class="text-muted font-weight-normal" style="text-align: center;">
-                                    <a target="_blank" href="tel:0616595454">
-
-                                        <img src="img/tell.png" height="40px" width="40px">
-
-                                    </a>
-
-                                    &nbsp;
-                                    &nbsp;
-                                    <a target="_blank" href="https://line.me/ti/p/~@jangprogram2554">
-                                        <img src="img/ll.png" height="50px" width="50px">
+                                    <br>
+                                    <a target="_blank" href="https://line.me/ti/p/~jangprogram2554">
+                                        <img src="img/ll.png" height="35px">
                                     </a>
                                 </h6>
                             </div>
