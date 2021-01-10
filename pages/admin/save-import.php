@@ -3,22 +3,23 @@ include '../conn.php';
 include '../../fn.php';
 $data = $_POST["data"];
 $datas = explode(PHP_EOL, $data);
+$network = $_POST["network"];
+$cat = $_POST["cats"];
+$format = $_POST["format"];
 
 foreach ($datas as $value) {
     $number = "";
     $values = explode(",", $value);
-    $number = $values[0];
-    $cat = $_POST["cats"];
+    $number = trim($values[0]);
     $numbershow = $number;
-    $network = $_POST["network"];
     $baseprice = 0;
     $priceinsim = 0;
-    $price =  $values[1];
+    $price =  trim($values[1]);
     $openday = "";
-    $closeday = $values[2];
+    $closeday = trim($values[2]);
     $status = "Y";
     $remark = "";
-    $seq = $values[3];
+    $seq = trim($values[3]);
 
 
     $number = str_replace("-", "", $number);
@@ -74,7 +75,7 @@ foreach ($datas as $value) {
             $sql = "INSERT INTO numbersims(number,numbershow,catalogid,networkid,baseprice,priceinsim,openday,closeday,soldday,status,price,remark,sum,n1,n2,n3,n4,n5,n6,n7,stwith,seq)
                 VALUES (
                     '" . $number . "',
-                    '" . $numbershow . "',
+                    '" . formatNumber($format, $number) . "',
                     '" . $cat . "," . "',
                     '" . $network . "',
                     '" . $baseprice . "',
@@ -98,10 +99,10 @@ foreach ($datas as $value) {
                 )";
         }
         if (checkLogin()) {
+            //echo $sql;
             $conn->query($sql);
         }
     }
 }
-
 include '../end-conn.php';
 echo "<script>window.location = '../../index.php?page=admin&sub-page=add-import'</script>";

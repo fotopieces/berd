@@ -10,11 +10,11 @@
                             <input type="hidden" id="cats" name="cats">
                             <p class="card-description">
                             <h4 class="card-title">เพิ่มเบอร์</h4>
-                            <font color="red">ใส่ * หน้าหลังหากต้องการสีแดง</font>&nbsp&nbsp&nbsp
+                            <!-- <font color="red">ใส่ * หน้าหลังหากต้องการสีแดง</font>&nbsp&nbsp&nbsp
 
                             <font color="green">ใส่ @ หน้าหลังหากต้องการสีเขียว</font>&nbsp&nbsp&nbsp
 
-                            <font color="orange">ใส่ # หน้าหลังหากต้องการสีเหลือง</font>
+                            <font color="orange">ใส่ # หน้าหลังหากต้องการสีเหลือง</font> -->
                             </p>
                             <div class="row">
                                 <div class="col-md-12">
@@ -23,6 +23,20 @@
                                             <label for="exampleTextarea1">เบอร์โทร,ราคา,วันหมดอายุ m/yy,ลำดับ</label>
                                             <br>
                                             <label for="exampleTextarea1">ตัวอย่าง : 0926164466,2000,4/21,001</label>
+                                            <br>
+                                            <br>
+                                            <label for="exampleTextarea1">เลือกรูปแบบ</label>
+                                            <select id="format" name="format" style="background-color: #2a3038;width:100%;color: white; ">
+
+                                                <option value="000-0000000">000-0000000</option>
+                                                <option value="00-0000-0000">00-0000-0000</option>
+                                                <option value="000-000-0000">000-000-0000</option>
+                                                <option value="000-00000-00">000-00000-00</option>
+                                                <option value="000-000-0-000">000-000-0-000</option>
+                                                <option value="00-00-00-00-00">00-00-00-00-00</option>
+                                            </select>
+                                            <br>
+                                            <br>
                                             <textarea class="form-control" style="color: white;line-height: 16pt" id="data" rows="10" name="data"></textarea>
                                         </div>
                                     </div>
@@ -106,6 +120,7 @@
                                             <tr>
 
                                                 <td style="text-align:center"> <?= $row["number"] ?> </td>
+                                                <td style="text-align:center"> รูปแบบ</br>(<font color="red"> <?= $row["numbershow"] ?> </font>) </td>
                                                 <td style="text-align:center"> ลำดับ</br>(<font color="red"> <?= $row["seq"] ?> </font>) </td>
                                                 <td style="text-align:center"> ราคาขาย</br>( <font color="red"><?= $row["price"] ?> ฿</font>)</td>
                                                 <td style="text-align:center"> วันหมดอายุ</br>(<font color="red"> <?= $row["priceinsim"] ?> </font>) </td>
@@ -156,6 +171,7 @@
         function doSave() {
             var data = "";
 
+
             document.getElementById("cats").value = getSelectValues(document.getElementById("cat"));
 
             if (document.getElementById("data").value == "") {
@@ -164,11 +180,24 @@
                 alert("กรุณาเลือกหมวดซิม");
             } else if (document.getElementById("networks").value == "0") {
                 alert("กรุณาเลือกเครือข่าย");
+            } else if (!checkFormat(document.getElementById("data").value)) {
+                alert("ใส่ข้อมูลไม่ถูกต้อง");
             } else {
                 if (confirm("ต้องการบันทึกข้อมูลหรือไม่")) {
                     document.getElementById("importNumber").submit();
                 }
             }
 
+        }
+
+        function checkFormat(data) {
+            var datas = data.split("\n");
+            for (i = 0; i < datas.length; i++) {
+                var n = datas[i].split(",")[0];
+                if (n.length != 10 || datas[i].split(",").length != 4) {
+                    return false;
+                }
+            }
+            return true;
         }
     </script>

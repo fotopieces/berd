@@ -90,3 +90,20 @@ function subNumber($number)
         . $nn5 . " "
         . $nn6 . " " . "  (" . $sum . ")";
 }
+
+function formatNumber($format, $number)
+{
+    if ($format == '000-0000000') {
+        return substr($number, 0, 3) . "-" . substr($number, 3, 10);
+    } else if ($format == '00-0000-0000') {
+        return substr($number, 0, 2) . "-" . substr($number, 2, 4) . "-" . substr($number, 6, 4);
+    } else if ($format == '000-000-0000') {
+        return substr($number, 0, 3) . "-" . substr($number, 3, 3) . "-" . substr($number, 6, 4);
+    } else if ($format == '000-00000-00') {
+        return substr($number, 0, 3) . "-" . substr($number, 3, 5) . "-" . substr($number, 8, 2);
+    } else if ($format == '000-000-0-000') {
+        return substr($number, 0, 3) . "-" . substr($number, 3, 3) . "-" . substr($number, 6, 1) . "-" . substr($number, 7, 3);
+    } else if ($format == '00-00-00-00-00') {
+        return substr($number, 0, 2) . "-" . substr($number, 2, 2) . "-" . substr($number, 4, 2) . "-" . substr($number, 6, 2) . "-" . substr($number, 8, 2);
+    }
+}
