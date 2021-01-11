@@ -149,6 +149,8 @@
                         </p>
                         <form id="sc" method="post">
                             <input style="color: white;" class="typeahead" type="number" id="scNum" name="scNum" value="<?= $_POST["scNum"] ?>">
+                            <br>
+                            <button type="submit" id="srcbt" class="btn btn-primary mr-2">ค้นหา</button>
                         </form>
                         <br>
                         <div class="table-responsive">

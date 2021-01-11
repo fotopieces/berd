@@ -49,7 +49,7 @@
     </div>
     <div class="row" style="padding-top: 25px;">
       <div class="col-md-2 col-xl-12 grid-margin stretch-card">
-        <div class="card">
+        <div class="card" style="padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;">
           <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;">
             <h4 class="card-title"></h4>
             <div class="owl-carousel full-width" id="owl-carousel-basic">
